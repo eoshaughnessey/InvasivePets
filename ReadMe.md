@@ -7,7 +7,7 @@ We have two questions:
  
  For this workshop, we have 3 goals:
  1. Develop a data management plan-of-action and database
-  a. determine what we need in our database
+      A. Determine what we need in our database
  2. Migrate from Google Drive to developing a progressive workflow in GitHub
  3. Learn a bit about Python
 
