@@ -9,5 +9,6 @@ We have two questions:
  1. Develop a data management plan-of-action and database
       A. Determine what we need in our database
  2. Migrate from Google Drive to developing a progressive workflow in GitHub
- 3. Learn a bit about Python
+ 3. Clip GPS points to 3 counties of interest
+ 4. Learn a bit about Python
 
