@@ -26,6 +26,7 @@ dt  <- read_excel("data/MasterDataSheet.xlsx")
 tab <- as.data.table(dt)
 tab[,Max_Temp := as.numeric(Max_Temp)]
 tab[,Min_Temp := as.numeric(Min_Temp)]
+tab[,YearEndCDa:=as.numeric(YearEndCDa)]
 
 yrs  <- tab[, unique(YearEndCDa)]
 grps <- tab[, unique(group_)]
@@ -60,6 +61,7 @@ grp2 <- as.data.frame(tab[,
               YearEndCDa
             )]
 )
+
 
 shp <- "data/cb_2016_us_county_5m"
 counties <- st_read(shp, stringsAsFactors = FALSE)
@@ -106,7 +108,10 @@ ui <- fluidPage(
         selectInput("species",
                     label = NULL,
                     choices = spcs
-        )
+        ),
+        selectInput("years",
+                    label=NULL,
+                    choices=yrs)
       ),
       
       # Show a plot of the generated distribution
@@ -127,8 +132,11 @@ server <- function(input, output) {
       bins <- seq(min(x), max(x), length.out = input$mnbins + 1)
       
       # draw the histogram with the specified number of bins
-      hist(x, breaks = bins, col = 'darkgray', border = 'white')
+      hist(x, breaks = bins, col = 'blue', border = 'white',
+           xlab = "Minimum Temperature Tolerance",
+          main = "Histogram of Minimum Temperature Tolerance")
    })
+   
    
    output$mxPlot <- renderPlot({
      # generate bins based on input$bins from ui.R
@@ -136,12 +144,14 @@ server <- function(input, output) {
      bins <- seq(min(x), max(x), length.out = input$mxbins + 1)
      
      # draw the histogram with the specified number of bins
-     hist(x, breaks = bins, col = 'darkgray', border = 'white')
+     hist(x, breaks = bins, col = 'red', border = 'white',
+          xlab = "Maximum Temperature Tolerance",
+          main = "Histogram of Maximum Temperature Tolerance")
    })
 
    filteredData <- reactive({
-     print(grp1[grp1$group_ == input$groups[1],]);
-     grp1[grp1$group_ == input$groups[1],]
+     print(grp1[grp1$group_ == input$group[1],]);
+     grp1[grp1$group_ == input$group[1],]
    })
    
    output$cntymap <-renderLeaflet({
@@ -150,29 +160,32 @@ server <- function(input, output) {
 #     addProviderTiles(providers$Stamen.TonerLite,
 #      options = providerTileOptions(noWrap = TRUE)
 #     ) %>% 
+       addPolygons()%>%
      addCircles(
-#       data = filteredData(), 
-       data = grp1[grp1$group_ == "Fishes",],
+       data = filteredData(), 
+#     data = grp1[grp1$group_ == "Fishes",],
        radius = ~count, 
        lat = ~Latitude, 
-       lng = ~Longitude
+       lng = ~Longitude,
+        col='red'
       )
    }) 
    
-   observe({
-#     userGrp <- filteredData();
-     
-     leafletProxy("cntymap", data = cnty) %>% 
-       clearShapes() %>%
-          addCircles(
-#             data = userGrp, 
-            data = filteredData(), 
-            radius = ~count, 
-             lat = ~Latitude, 
-             lng = ~Longitude
-           )
-     
-   })   
+#    observe({
+# #     userGrp <- filteredData();
+#      
+#      leafletProxy("cntymap", data = cnty) %>% 
+#        clearShapes() %>%
+#           addCircles(
+# #             data = userGrp, 
+#  #           data = filteredData(), 
+#           data = grp1[grp1$group_ == "Fishes",],
+#             radius = ~count, 
+#              lat = ~Latitude, 
+#              lng = ~Longitude
+#            )
+#      
+#    })   
 }
 
 # Run the application 
