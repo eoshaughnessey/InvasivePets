@@ -23,10 +23,12 @@ library(dplyr)
 
 
 dt  <- read_excel("data/MasterDataSheet.xlsx")
+
 tab <- as.data.table(dt)
 tab[,Max_Temp := as.numeric(Max_Temp)]
 tab[,Min_Temp := as.numeric(Min_Temp)]
 tab[,YearEndCDa:=as.numeric(YearEndCDa)]
+
 
 yrs  <- tab[, unique(YearEndCDa)]
 grps <- tab[, unique(group_)]
@@ -62,6 +64,19 @@ grp2 <- as.data.frame(tab[,
             )]
 )
 
+grp3 <- as.data.frame(tab[,
+                          .(
+                            count = .N, 
+                            Latitude = mean(Latitude, na.rm = T), 
+                            Longitude = mean(Longitude, na.rm = T), 
+                            maxT = mean(Max_Temp, na.rm = T), 
+                            minT = mean(Min_Temp, na.rm = T)
+                          ), 
+                          by = list(
+                            YearEndCDa,
+                            gen_sp 
+                            )]
+)
 
 shp <- "data/cb_2016_us_county_5m"
 counties <- st_read(shp, stringsAsFactors = FALSE)
@@ -118,7 +133,9 @@ ui <- fluidPage(
       mainPanel(
          plotOutput("mxPlot"),
          plotOutput("mnPlot"),
-         leafletOutput("cntymap")
+         leafletOutput("cntymap"),
+         leafletOutput("cntymap_sp"),
+         leafletOutput("cntymap_yr")
       )
    )
 )
@@ -148,18 +165,31 @@ server <- function(input, output) {
           xlab = "Maximum Temperature Tolerance",
           main = "Histogram of Maximum Temperature Tolerance")
    })
-
+#Reactive codes for leaflet
    filteredData <- reactive({
      print(grp1[grp1$group_ == input$group[1],]);
      grp1[grp1$group_ == input$group[1],]
    })
    
+  filteredData_sp <- reactive({
+  print(grp2[grp2$gen_sp == input$species[1],]);
+     grp2[grp2$gen_sp == input$species[1],]
+   })
+  
+  filteredData_yr<-reactive({
+    print(grp3[grp3$YearEndCDa==input$years[1],]);
+    grp3[grp3$YearEndCDa==input$years[1],]
+  })
+
+#outmap for taxon   
    output$cntymap <-renderLeaflet({
      leaflet(cnty)%>%
-     addProviderTiles('Esri.WorldImagery')%>% 
-#     addProviderTiles(providers$Stamen.TonerLite,
-#      options = providerTileOptions(noWrap = TRUE)
-#     ) %>% 
+     addProviderTiles('Esri.WorldImagery', group='Esri')%>% 
+    addProviderTiles('Stamen.TonerLite', group='Stamen')%>% 
+       addLayersControl(baseGroups=c('Esri','Stamen'))%>%
+      addProviderTiles(providers$Stamen.TonerLite,
+      options = providerTileOptions(noWrap = TRUE)
+     ) %>% 
        addPolygons()%>%
      addCircles(
        data = filteredData(), 
@@ -170,22 +200,86 @@ server <- function(input, output) {
         col='red'
       )
    }) 
+
+#output map for species...something is wrong with the coordinate system
+   output$cntymap_sp <-renderLeaflet({
+    leaflet(cnty)%>%
+     addProviderTiles('Esri.WorldImagery', group='Esri')%>% 
+    addProviderTiles('Stamen.TonerLite', group='Stamen')%>% 
+       addLayersControl(baseGroups=c('Esri','Stamen'))%>%
+      addProviderTiles(providers$Stamen.TonerLite,
+    options = providerTileOptions(noWrap = TRUE)
+     ) %>% 
+       addPolygons()%>%
+    addCircles(
+       data = filteredData_sp(), 
+#     data = grp1[grp2$gen_sp == "Fishes",],
+      radius = ~count, 
+     lat = ~Latitude, 
+       lng = ~Longitude,
+       col='yellow'
+      )
+  }) 
+
    
-#    observe({
-# #     userGrp <- filteredData();
-#      
-#      leafletProxy("cntymap", data = cnty) %>% 
-#        clearShapes() %>%
-#           addCircles(
-# #             data = userGrp, 
-#  #           data = filteredData(), 
-#           data = grp1[grp1$group_ == "Fishes",],
-#             radius = ~count, 
-#              lat = ~Latitude, 
-#              lng = ~Longitude
-#            )
-#      
-#    })   
+ #output map for year      
+   output$cntymap_yr <-renderLeaflet({
+     leaflet(cnty)%>%
+       addProviderTiles('Esri.WorldImagery', group='Esri')%>% 
+       addProviderTiles('Stamen.TonerLite', group='Stamen')%>% 
+       addLayersControl(baseGroups=c('Esri','Stamen'))%>%
+       addProviderTiles(providers$Stamen.TonerLite,
+                        options = providerTileOptions(noWrap = TRUE)
+       ) %>% 
+       addPolygons()%>%
+       addCircles(
+         data = filteredData_yr(), 
+         #     data = grp1[grp2$gen_sp == "Fishes",],
+         radius = ~count, 
+         lat = ~Latitude, 
+         lng = ~Longitude,
+         col='maroon'
+       )
+   }) 
+   
+observe({
+#     userGrp <- filteredData();
+     leafletProxy("cntymap", data = cnty) %>% 
+      clearShapes() %>%
+           addCircles(
+          data = grp1[grp1$group_ == "Fishes",],
+           radius = ~count, 
+           lat = ~Latitude, 
+          lng = ~Longitude
+       )
+ })   
+
+
+observe({
+  #     userGrp <- filteredData();
+  leafletProxy("cntymap_sp", data = cnty) %>% 
+    clearShapes() %>%
+    addCircles(
+#             data = userGrp, 
+#          data = filteredData(), 
+      data = grp2[grp2$gen_sp == "Fishes",],
+      radius = ~count, 
+      lat = ~Latitude, 
+      lng = ~Longitude
+    )
+  
+})   
+
+observe({
+  leafletProxy("cntymap_yr", data = cnty) %>% 
+    clearShapes() %>%
+    addCircles(
+      data = grp1[grp1$YearEndCDa == "1873",],
+      radius = ~count, 
+      lat = ~Latitude, 
+      lng = ~Longitude
+    )
+})
 }
 
 # Run the application 
