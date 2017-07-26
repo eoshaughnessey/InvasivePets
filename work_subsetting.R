@@ -25,6 +25,7 @@ plot(counties_il_three$geometry)
 #set the coordinate reference system and check
 #we had to put all coordinates on the WGS84 system because 
 #we couldn't get the georef file into NAD83
+data_file <- read_csv("~/InvasivePets/data_file_redo.csv")
 georef=st_as_sf(data_file, coords=c("Longitude","Latitude")) %>%
   st_set_crs(4326)
 st_crs(georef)
@@ -35,59 +36,51 @@ huc2<-'HUCs_clipped'
 huc<-st_read(huc2, stringsAsFactors = FALSE)
 huc_transform=st_transform(huc, crs=4326)
 
-#combine the shapefile with three separate counties(county3)
-state_il<-st_union(county3)
-huc_state_il<-st_intersection(huc_transform,state_il)
+#after transforming crs, combine the shapefile with three separate counties(county3)
 county3=st_transform(counties_il_three, crs=4326)
-plot(county3$geometry, col='blanchedalmond')
-plot(georef, add=TRUE)
-georef_3<-st_intersection(georef,county3)
-plot(georef_3$geometry, add=TRUE, pch=1, col='red')
-huc2<-'HUCs_clipped.shp'
-huc<-st_read(huc2, stringsAsFactors = FALSE)
-huc_transform=st_transform(huc, crs=4326)
 state_il<-st_union(county3)
-georef_3<-st_intersection(georef,state_il)
-plot(georef_3$geometry, border='black', pch=20, col='red')
-huc_test<-st_intersection(huc_transform,georef)
-plot(huc_transform$geometry)
+plot(state_il, col='blanchedalmond')
+plot(georef, add=TRUE)
+
+#see how the hucs are located in the three counties
 huc_state_il<-st_intersection(huc_transform,state_il)
 plot(huc_state_il$geometry, col=NA, border='blue')
-huc_il_georef<-st_intersection(georef,huc_state_il)
-plot(huc_il_georef$geometry, col=NA)
+View(huc_state_il)
+
+#see how gps coordinates are found within the three counties
+#this step seems unnecessary, as you could just intersect georef with huc test
+georef_3<-st_intersection(georef,state_il)
+View(georef_3)
+
+#see how the gps points lay within the hucs of three counties
+plot(huc_state_il$geometry, col=NA, border='blue')
+plot(georef_3$geometry, pch=20, col='red', add=TRUE)
 
 
+#but we still need a single data frame for counties, hucs, and gps poiints
+#I didn't know we already had this done in the MasterDataSheet...
+huc_gps<-st_intersection(huc_transform,georef_3)
+View(huc_gps)
+huc_gps_table<-huc_gps[,c(22,46,47,48,49,50,51,52,53)] #removes unwanted columns
+head(huc_gps_table)
+write.csv(huc_gps_table, file="huc_gps_table.csv")
 
-#plot(state_il)
-#plot(georef_3, add=TRUE, col='coral1', pch=20)
+#bring in centroid files
+centroid_shp="Census"
+centroid=st_read(centroid_shp, stringsAsFactors = FALSE) %>%st_set_crs(4326)
+st_crs(centroid)
+View(centroid)
 
+#determine in which huc_12 each centroid is in
+centroid_huc<-st_intersection(centroid, huc_transform)
+View(centroid_huc)
+centroid_huc_crop<-centroid_huc[,c(1,2,3,8,32)]
+head(centroid_huc_crop)
+View(centroid_huc_crop)
+write.csv(centroid_huc, file="centroid_huc.csv")
 
-
-
-
-
-
-
-
-#Code from 7/20/17...no longer important
-#georef<-st_transform(georef, crs=st_crs(counties_il_three))
-#st_contains(georef,counties_il_three)
-#Coords=cbind(data_file$Longitude,data_file$Latitude)
-#sp=SpatialPoints(coords)
-#plot(sp)
-#spdf=SpatialPointsDataFrame(coords, as.data.frame(data_file), 
-#                            proj4string =CRS('+init=epsg:26916'))
-#plot(spdf)
-#st_crs(spdf)
-#CRS(spdf)
-
-
-#georef<-st_as_sf(spdf)
-#class(georef)
-#plot(georef$geometry)
-#st_crs(georef)
-#st_crs(counties_il_three)
-#georef<-st_transform(georef, crs=st_crs(counties_il_three)$proj4string)
-#plot(counties_il_three, col='aquamarine4', add=TRUE, lwd=2)
-#st_contains(georef, counties_il_three)
-#st_crs(georef)
+huc_population<-centroid_huc_crop %>%
+  group_by(HUC12_1) %>%
+  summarise(Population = sum(DP0010001))
+View(huc_population)
+write.csv(huc_population, file="huc_populations.csv")
