@@ -1,26 +1,41 @@
 library(sf)
 library(rgdal)
-list.files("../handouts/data")
+#list.files("../handouts/data")
+
+#bring in shapefile of US counties
 shp="../handouts/data/cb_2016_us_county_5m"
 counties=st_read(shp, stringsAsFactors = FALSE)
+
+#crop the shapefile to just IL counties, and then down to the three counties of interest
+#plot to check
 library(dplyr)
 counties_il=filter(counties, STATEFP=='17')
 head(counties)
 counties_il_three=filter(counties_il, NAME %in% c('Cook','DuPage', 'Lake'))
-plot(counties_il_three$geometry)
-?st_point
-install.packages('leaflet')
-library(leaflet)
-leaflet(counties_il_three)%>%
-  addProviderTiles('Esri.WorldImagery')%>% 
-  addPolygons()%>%
-  addMarkers(data=georef, popup=~common)
+plot(counties_il_three$geometry) 
+
+#install.packages('leaflet')
+#library(leaflet)
+#leaflet(counties_il_three)%>%
+#  addProviderTiles('Esri.WorldImagery')%>% 
+#  addPolygons()%>%
+#  addMarkers(data=georef, popup=~common)
+
+#bring in data file that contains gps coordinates of organisms
+#set the coordinate reference system and check
+#we had to put all coordinates on the WGS84 system because 
+#we couldn't get the georef file into NAD83
 georef=st_as_sf(data_file, coords=c("Longitude","Latitude")) %>%
   st_set_crs(4326)
 st_crs(georef)
-huc2<-'HUCs_clipped.shp'
+
+#bring in huc12s within the three counties and 
+#set the crs to WGS84
+huc2<-'HUCs_clipped'
 huc<-st_read(huc2, stringsAsFactors = FALSE)
 huc_transform=st_transform(huc, crs=4326)
+
+#combine the shapefile with three separate counties(county3)
 state_il<-st_union(county3)
 huc_state_il<-st_intersection(huc_transform,state_il)
 county3=st_transform(counties_il_three, crs=4326)
@@ -39,7 +54,7 @@ plot(huc_transform$geometry)
 huc_state_il<-st_intersection(huc_transform,state_il)
 plot(huc_state_il$geometry, col=NA, border='blue')
 huc_il_georef<-st_intersection(georef,huc_state_il)
-plot(huc_il_georef$geometry, border='blue', col=NA)
+plot(huc_il_georef$geometry, col=NA)
 
 
 
