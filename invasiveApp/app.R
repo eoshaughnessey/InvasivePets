@@ -101,7 +101,7 @@ ui <- fluidPage(
    sidebarLayout(
       sidebarPanel(
          sliderInput("mxbins",
-                     "Number of bins:",
+                     "Maximum Temperature, Number of bins:",
 #                     min = min(mx),
 #                     max = max(mx),
 #                    value = mean(mx)),
@@ -109,7 +109,7 @@ ui <- fluidPage(
                       30,
                       30),
          sliderInput("mnbins",
-                     "Number of bins:",
+                     "Minimum Temperature, Number of bins:",
 #                     min = min(mn),
 #                     max = max(mn),
 #                     value = mean(mn))
@@ -117,15 +117,15 @@ ui <- fluidPage(
                       30,
                       30),
         selectInput("group",
-                    label = NULL,
+                    label = "Taxon",
                     choices = grps
                     ),
         selectInput("species",
-                    label = NULL,
+                    label = "Species",
                     choices = spcs
         ),
         selectInput("years",
-                    label=NULL,
+                    label="Year",
                     choices=yrs)
       ),
       
