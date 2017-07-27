@@ -131,12 +131,15 @@ ui <- fluidPage(
       
       # Show a plot of the generated distribution
       mainPanel(
-         plotOutput("mxPlot"),
-         plotOutput("mnPlot"),
-         leafletOutput("cntymap"),
-         leafletOutput("cntymap_sp"),
-         leafletOutput("cntymap_yr")
+        tabsetPanel(
+          #create tabs so you don't have to scroll down
+         tabPanel("Max", plotOutput("mxPlot")),
+         tabPanel("Min", plotOutput("mnPlot")),
+         tabPanel("Taxon", leafletOutput("cntymap")),
+         tabPanel("Species", leafletOutput("cntymap_sp")),
+         tabPanel("Year", leafletOutput("cntymap_yr"))
       )
+   )
    )
 )
 
@@ -179,6 +182,11 @@ server <- function(input, output) {
   filteredData_yr<-reactive({
     print(grp3[grp3$YearEndCDa==input$years[1],]);
     grp3[grp3$YearEndCDa==input$years[1],]
+  })
+  
+#trial to create subsets
+  output$vx<-renderUI({
+    
   })
 
 #outmap for taxon   
@@ -238,7 +246,7 @@ server <- function(input, output) {
          radius = ~count, 
          lat = ~Latitude, 
          lng = ~Longitude,
-         col='maroon'
+         col='lawngreen'
        )
    }) 
    
@@ -254,14 +262,13 @@ observe({
        )
  })   
 
-
 observe({
   #     userGrp <- filteredData();
   leafletProxy("cntymap_sp", data = cnty) %>% 
     clearShapes() %>%
     addCircles(
 #             data = userGrp, 
-#          data = filteredData(), 
+#          data = filteredData_sp(), 
       data = grp2[grp2$gen_sp == "Fishes",],
       radius = ~count, 
       lat = ~Latitude, 
