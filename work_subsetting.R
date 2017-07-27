@@ -79,6 +79,7 @@ head(centroid_huc_crop)
 View(centroid_huc_crop)
 write.csv(centroid_huc, file="centroid_huc.csv")
 
+#determine population size of each huc
 huc_population<-centroid_huc_crop %>%
   group_by(HUC12_1) %>%
   summarise(Population = sum(DP0010001))
