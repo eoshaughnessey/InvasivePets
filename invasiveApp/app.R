@@ -22,7 +22,9 @@ library(leaflet)
 library(dplyr)
 
 
-dt  <- read_excel("data/MasterDataSheet.xlsx")
+dt <- read.csv("~/InvasivePets/MasterDataSheet_temperature.csv")
+
+
 
 tab <- as.data.table(dt)
 tab[,Max_Temp := as.numeric(Max_Temp)]
@@ -281,7 +283,7 @@ observe({
   leafletProxy("cntymap_yr", data = cnty) %>% 
     clearShapes() %>%
     addCircles(
-      data = grp1[grp1$YearEndCDa == "1873",],
+      data = grp3[grp3$YearEndCDa == "1873",],
       radius = ~count, 
       lat = ~Latitude, 
       lng = ~Longitude
