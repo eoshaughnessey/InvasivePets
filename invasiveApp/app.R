@@ -35,6 +35,7 @@ tab[,YearEndCDa:=as.numeric(YearEndCDa)]
 yrs  <- tab[, unique(YearEndCDa)]
 grps <- tab[, unique(group_)]
 spcs <- tab[, unique(gen_sp)]
+common<-tab[, unique(common)]
 
 grp1 <- as.data.frame(tab[,
             .(
@@ -79,6 +80,20 @@ grp3 <- as.data.frame(tab[,
                             gen_sp 
                             )]
 )
+
+grp4 <- as.data.frame(tab[,
+                          .(
+                          count=.N,
+                          Latitude=mean(Latitude, na.rm=T),
+                          Longitude=mean(Longitude, na.rm=T),
+                          maxT=mean(Max_Temp, na.rm=T),
+                          minT=mean(Min_Temp, na.rm=T)
+                          ),
+                          by = list(
+                            common,
+                            county_ori
+                          )]
+                      )
 
 shp <- "data/cb_2016_us_county_5m"
 counties <- st_read(shp, stringsAsFactors = FALSE)
@@ -128,7 +143,11 @@ ui <- fluidPage(
         ),
         selectInput("years",
                     label="Year",
-                    choices=yrs)
+                    choices=yrs
+      ),
+        selectInput("common1",
+                    label="Common",
+                    choice=common)
       ),
       
       # Show a plot of the generated distribution
@@ -139,7 +158,8 @@ ui <- fluidPage(
          tabPanel("Min", plotOutput("mnPlot")),
          tabPanel("Taxon", leafletOutput("cntymap")),
          tabPanel("Species", leafletOutput("cntymap_sp")),
-         tabPanel("Year", leafletOutput("cntymap_yr"))
+         tabPanel("Year", leafletOutput("cntymap_yr")),
+         tabPanel("CommonName", leafletOptions("cntymap_cn"))
       )
    )
    )
@@ -186,10 +206,10 @@ server <- function(input, output) {
     grp3[grp3$YearEndCDa==input$years[1],]
   })
   
-#trial to create subsets
-  output$vx<-renderUI({
-    
-  })
+  filteredData_cn<-reactive({
+    print(grp4[grp4$common==input$common1[1],]);
+    grp4[grp4$common==input$common1[1],]
+  }) 
 
 #outmap for taxon   
    output$cntymap <-renderLeaflet({
@@ -225,9 +245,9 @@ server <- function(input, output) {
        data = filteredData_sp(), 
 #     data = grp1[grp2$gen_sp == "Fishes",],
       radius = ~count, 
-     lat = ~Latitude, 
-       lng = ~Longitude,
-       col='yellow'
+      lat = ~Latitude, 
+      lng = ~Longitude,
+      col='yellow'
       )
   }) 
 
@@ -244,13 +264,31 @@ server <- function(input, output) {
        addPolygons()%>%
        addCircles(
          data = filteredData_yr(), 
-         #     data = grp1[grp2$gen_sp == "Fishes",],
          radius = ~count, 
          lat = ~Latitude, 
          lng = ~Longitude,
          col='lawngreen'
        )
    }) 
+   
+#output map for common names     
+   output$cntymap_cn <-renderLeaflet({
+     leaflet(cnty)%>%
+       addProviderTiles('Esri.WorldImagery', group='Esri')%>% 
+       addProviderTiles('Stamen.TonerLite', group='Stamen')%>% 
+       addLayersControl(baseGroups=c('Esri','Stamen'))%>%
+       addProviderTiles(providers$Stamen.TonerLite,
+                        options = providerTileOptions(noWrap = TRUE)
+       ) %>% 
+       addPolygons()%>%
+       addCircles(
+         data = filteredData_cn(), 
+         radius = ~count, 
+         lat = ~Latitude, 
+         lng = ~Longitude,
+         col='seagreen'
+       )
+   })
    
 observe({
 #     userGrp <- filteredData();
@@ -289,6 +327,18 @@ observe({
       lng = ~Longitude
     )
 })
+
+observe({
+  leafletProxy("cntymap_cn", data = cnty) %>% 
+    clearShapes() %>%
+    addCircles(
+      data = grp4[grp4$common == "American Alligator",],
+      radius = ~count, 
+      lat = ~Latitude, 
+      lng = ~Longitude
+    )
+})
+
 }
 
 # Run the application 
