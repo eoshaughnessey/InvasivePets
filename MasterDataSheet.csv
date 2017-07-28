@@ -1,4 +1,4 @@
-group_,gen_sp,common,YearEndCDa,status,county_ori,WaterBody,HUC,,,
+group_,gen_sp,common,YearEndCDa,status,county_ori,WaterBody,HUC,Min_Temp,Max_Temp,
 Reptiles-Crocodilians,Alligator mississippiensis,American Alligator,2008,failed,Cook,Bubbly Creek,71200030107,13,33,http://myfwc.com/wildlifehabitats/managed/alligator/facts/
 Reptiles-Crocodilians,Alligator mississippiensis,American Alligator,2010,failed,Cook,Chicago River,71200030106,13,33,
 Reptiles-Crocodilians,Alligator mississippiensis,American Alligator,2005,failed,Lake,East Loon Lake,71200061004,13,33,
@@ -29,7 +29,6 @@ Plants,Najas minor,Brittle Waternymph,2001,NA,Cook,Powderhorn Lake,40400010603,8
 Fishes,Salmo trutta,Brown Trout,1999,NA,Cook,Calumet River,71200030407,18,24,http://www.fishbase.org/Summary/SpeciesSummary.php?ID=238&AT=brown+trout
 Fishes,Salmo trutta,Brown Trout,1991,NA,Cook,Chicago River,71200030107,18,24,
 Fishes,Salmo trutta,Brown Trout,1991,NA,Cook,North Shore Channel,71200030104,18,24,
-Fishes,Salmo trutta,Brown Trout,1999,NA,Lake,trib. Lake Michigan,NA,18,24,
 Fishes,Salmo trutta,Brown Trout,1999,NA,Lake,trib. Lake Michigan,40400020501,18,24,
 Fishes,Salmo trutta,Brown Trout,1997,NA,Lake,Waukegan River,40400020501,18,24,
 Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1995,NA,Cook,Horsetail Lake,71200040702,10,30,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3601151/
@@ -84,7 +83,6 @@ Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1988,NA,Lake,F
 Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1999,NA,Lake,Fox River,71200061006,10,30,
 Fishes,Oncorhynchus tshawytscha,Chinook Salmon,2001,NA,Cook,Lake Calumet,40400010603,4,25,http://www.fishbase.org/Summary/SpeciesSummary.php?ID=244&AT=Chinook+Salmon
 Fishes,Oncorhynchus tshawytscha,Chinook Salmon,1997,NA,Cook,Calumet River,40400010603,4,25,
-Fishes,Oncorhynchus tshawytscha,Chinook Salmon,1999,NA,Cook,South Lagoon,NA,4,25,
 Fishes,Oncorhynchus tshawytscha,Chinook Salmon,1990,NA,Cook,Chicago River,71200030107,4,25,
 Fishes,Oncorhynchus tshawytscha,Chinook Salmon,1992,NA,Cook,North Shore Channel,71200030104,4,25,
 Fishes,Oncorhynchus tshawytscha,Chinook Salmon,1994,NA,Cook,North Shore Channel,71200030104,4,25,
