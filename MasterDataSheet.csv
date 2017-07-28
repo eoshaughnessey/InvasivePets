@@ -1,4 +1,4 @@
-group_,gen_sp,common,YearEndCDa,status,county_ori,WaterBody,HUC,,,
+group_,gen_sp,common,YearEndCDa,status,county_ori,WaterBody,HUC,Min_Temp,Max_Temp,
 Reptiles-Crocodilians,Alligator mississippiensis,American Alligator,2008,failed,Cook,Bubbly Creek,71200030107,13,33,http://myfwc.com/wildlifehabitats/managed/alligator/facts/
 Reptiles-Crocodilians,Alligator mississippiensis,American Alligator,2010,failed,Cook,Chicago River,71200030106,13,33,
 Reptiles-Crocodilians,Alligator mississippiensis,American Alligator,2005,failed,Lake,East Loon Lake,71200061004,13,33,
