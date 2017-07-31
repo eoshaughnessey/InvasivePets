@@ -85,3 +85,7 @@ huc_population<-centroid_huc_crop %>%
   summarise(Population = sum(DP0010001))
 View(huc_population)
 write.csv(huc_population, file="huc_populations.csv")
+
+dt <- read.csv("~/InvasivePets/MasterDataSheet_temperature")
+
+
