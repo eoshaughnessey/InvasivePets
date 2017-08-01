@@ -35,7 +35,7 @@ tab[,YearEndCDa:=as.numeric(YearEndCDa)]
 yrs  <- tab[, unique(YearEndCDa)]
 grps <- tab[, unique(group_)]
 spcs <- tab[, unique(gen_sp)]
-common<-tab[, unique(common)]
+cn<-tab[, unique(common)]
 
 grp1 <- as.data.frame(tab[,
             .(
@@ -84,8 +84,8 @@ grp3 <- as.data.frame(tab[,
 grp4 <- as.data.frame(tab[,
                           .(
                           count=.N,
-                          Latitude=mean(Latitude, na.rm=T),
-                          Longitude=mean(Longitude, na.rm=T),
+                          Latitude=Latitude, na.rm=T,
+                          Longitude=Longitude, na.rm=T,
                           maxT=mean(Max_Temp, na.rm=T),
                           minT=mean(Min_Temp, na.rm=T)
                           ),
@@ -145,9 +145,9 @@ ui <- fluidPage(
                     label="Year",
                     choices=yrs
       ),
-        selectInput("common1",
+        selectInput("common",
                     label="Common",
-                    choice=common)
+                    choice=cn)
       ),
       
       # Show a plot of the generated distribution
@@ -159,7 +159,7 @@ ui <- fluidPage(
          tabPanel("Taxon", leafletOutput("cntymap")),
          tabPanel("Species", leafletOutput("cntymap_sp")),
          tabPanel("Year", leafletOutput("cntymap_yr")),
-         tabPanel("CommonName", leafletOptions("cntymap_cn"))
+         tabPanel("CommonName", leafletOutput("cntymap_cn"))
       )
    )
    )
@@ -207,8 +207,8 @@ server <- function(input, output) {
   })
   
   filteredData_cn<-reactive({
-    print(grp4[grp4$common==input$common1[1],]);
-    grp4[grp4$common==input$common1[1],]
+    print(grp4[grp4$common==input$common[1],]);
+    grp4[grp4$common==input$common[1],]
   }) 
 
 #outmap for taxon   
@@ -286,7 +286,7 @@ server <- function(input, output) {
          radius = ~count, 
          lat = ~Latitude, 
          lng = ~Longitude,
-         col='seagreen'
+         col='blanchedalmond'
        )
    })
    
