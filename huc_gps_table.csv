@@ -1,4 +1,4 @@
-"","HUC12_1","group_","gen_sp","common","YearEndCDa","status","county_ori","WaterBody","geometry"
+"number","HUC12_1","group_","gen_sp","common","YearEndCDa","status","county_ori","WaterBody","geometry"
 "19","071200040601","Plants","Phragmites australis australis","Common Reed ssp. Australis",2008,NA,"Cook",NA,c(-87.7462, 41.4849)
 "25","071200030202","Plants","Phragmites australis australis","Common Reed ssp. Australis",2008,NA,"Cook",NA,c(-87.7423, 41.5136)
 "25.1","071200030202","Fishes","Morone americana","White Perch",2011,NA,"Cook","Butterfield Creek",c(-87.64954, 41.53986)
