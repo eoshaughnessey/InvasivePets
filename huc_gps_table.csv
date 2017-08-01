@@ -1,0 +1,313 @@
+number,HUC12_1,group_,gen_sp,common,YearEndCDa,status,county_ori,WaterBody,Longitude,Latitude
+19,71200040601,Plants,Phragmites australis australis,Common Reed ssp. Australis,2008,NA,Cook,NA,-87.7462,41.4849
+25,71200030202,Plants,Phragmites australis australis,Common Reed ssp. Australis,2008,NA,Cook,NA,-87.7423,41.5136
+25.1,71200030202,Fishes,Morone americana,White Perch,2011,NA,Cook,Butterfield Creek,-87.64954,41.53986
+19.1,71200040601,Plants,Phragmites australis australis,Common Reed ssp. Australis,2008,NA,Cook,NA,-87.7428,41.5447
+23,71200030203,Fishes,Misgurnus anguillicaudatus,Oriental Weatherfish,2011,NA,Cook,North Creek,-87.59577,41.55686
+23.1,71200030203,Fishes,Morone americana,White Perch,2001,NA,Cook,North Creek,-87.59587319,41.55702024
+38,71200030405,Plants,Puccinellia distans,Weeping Alkaligrass,1994,NA,Cook,NA,-87.6870822,41.62463341
+38.1,71200030405,Fishes,Morone americana,White Perch,2001,NA,Cook,Little Calumet River,-87.641591,41.629359
+33,40400010603,Plants,Najas minor,Brittle Waternymph,2012,Collected,Cook,Powderhorn Lake,-87.533498,41.640865
+37,71200030407,Fishes,Morone americana,White Perch,1991,NA,Cook,Little Calumet River,-87.57822,41.64108
+37.1,71200030407,Fishes,Morone americana,White Perch,1991,NA,Cook,Little Calumet River,-87.57822,41.64108
+37.2,71200030407,Fishes,Morone americana,White Perch,1998,NA,Cook,Little Calumet River,-87.57822,41.64108
+37.3,71200030407,Fishes,Morone americana,White Perch,2000,NA,Cook,Little Calumet River,-87.57822,41.64108
+37.4,71200030407,Fishes,Morone americana,White Perch,2011,NA,Cook,Little Calumet River,-87.5632,41.64168
+36,71200030404,Fishes,Misgurnus anguillicaudatus,Oriental Weatherfish,2001,NA,Cook,Midlothian Creek,-87.680148,41.643634
+37.5,71200030407,Fishes,Morone americana,White Perch,1991,NA,Cook,Calumet River,-87.5605313,41.64502308
+37.6,71200030407,Fishes,Morone americana,White Perch,1991,NA,Cook,Calumet River,-87.5605313,41.64502308
+37.7,71200030407,Fishes,Morone americana,White Perch,1995,NA,Cook,Calumet River,-87.5605313,41.64502308
+37.8,71200030407,Fishes,Morone americana,White Perch,1999,NA,Cook,Calumet River,-87.5605313,41.64502308
+37.9,71200030407,Fishes,Morone americana,White Perch,1999,NA,Cook,Calumet River,-87.5605313,41.64502308
+37.1,71200030407,Fishes,Morone americana,White Perch,2000,NA,Cook,Calumet River,-87.5605313,41.64502308
+37.11,71200030407,Fishes,Morone americana,White Perch,1999,NA,Cook,Little Calumet River,-87.59888449,41.64858114
+37.12,71200030407,Fishes,Hypophthalmichthys nobilis,Bighead Carp,2011,unknown,Cook,Flatfoot Lake,-87.5843,41.6499
+37.13,71200030407,Fishes,Hypophthalmichthys nobilis,Bighead Carp,2011,unknown,Cook,Flatfoot Lake,-87.5843,41.6499
+37.14,71200030407,Fishes,Hypophthalmichthys nobilis,Bighead Carp,2011,unknown,Cook,Flatfoot Lake,-87.5843,41.6499
+37.15,71200030407,Fishes,Ctenopharyngodon idella,Grass Carp,2011,unknown,Cook,Flatfoot Lake,-87.5843,41.6499
+37.16,71200030407,Fishes,Ctenopharyngodon idella,Grass Carp,2011,unknown,Cook,Flatfoot Lake,-87.5843,41.6499
+34,71200030403,Fishes,Morone americana,White Perch,2000,NA,Cook,Calumet Sag Channel,-87.68732258,41.65261692
+34.1,71200030403,Fishes,Morone americana,White Perch,1999,NA,Cook,Calumet Sag Channel,-87.66117134,41.65495456
+37.17,71200030407,Fishes,Morone americana,White Perch,1991,NA,Cook,Little Calumet River,-87.6411503,41.65759899
+37.18,71200030407,Fishes,Morone americana,White Perch,1991,NA,Cook,Little Calumet River,-87.6411503,41.65759899
+37.19,71200030407,Fishes,Salmo trutta,Brown Trout,1999,NA,Cook,Calumet River,-87.57245,41.65893
+37.2,71200030407,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1999,NA,Cook,Calumet River,-87.57245,41.65893
+37.21,71200030407,Fishes,Morone americana,White Perch,1991,NA,Cook,Calumet River,-87.57245,41.65893
+33.1,40400010603,Fishes,Morone americana,White Perch,1998,NA,Cook,Calumet River,-87.57138867,41.66193912
+34.2,71200030403,Fishes,Morone americana,White Perch,1999,NA,Cook,Calumet Sag Channel,-87.75259,41.66298
+34.3,71200030403,Fishes,Morone americana,White Perch,1999,NA,Cook,Calumet Sag Channel,-87.75258772,41.66298063
+37.22,71200030407,Fishes,Morone americana,White Perch,1998,NA,Cook,Little Calumet River,-87.62194469,41.663427
+37.23,71200030407,Fishes,Morone americana,White Perch,1999,NA,Cook,Little Calumet River,-87.62194469,41.663427
+63,71200040702,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1995,NA,Cook,Horsetail Lake,-87.8698,41.6698
+63.1,71200040702,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1995,NA,Cook,Horsetail Lake,-87.8698,41.6698
+57,71200040705,Fishes,Morone americana,White Perch,1999,NA,Cook,Chicago Sanitary and Ship Canal,-88.02824839,41.67059059
+34.4,71200030403,Fishes,Ctenopharyngodon idella,Grass Carp,2012,NA,Cook,Lake Calumet,-87.77821,41.67411
+33.2,40400010603,Fishes,Oncorhynchus tshawytscha,Chinook Salmon,2001,NA,Cook,Lake Calumet,-87.58786578,41.67554236
+33.3,40400010603,Fishes,Osmerus mordax,Rainbow Smelt,1982,NA,Cook,Lake Calumet,-87.58786578,41.67554236
+33.4,40400010603,Fishes,Morone americana,White Perch,1991,NA,Cook,Lake Calumet,-87.58786578,41.67554236
+33.5,40400010603,Fishes,Morone americana,White Perch,2000,NA,Cook,Lake Calumet,-87.58786578,41.67554236
+33.6,40400010603,Fishes,Morone americana,White Perch,2001,NA,Cook,Lake Calumet,-87.58786578,41.67554236
+34.5,71200030403,Fishes,Ctenopharyngodon idella,Grass Carp,2012,NA,Cook,Lake Calumet,-87.7935,41.67719
+60,71200040706,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1994,NA,Cook,Des Plaines River,-88.01729,41.68001
+63.2,71200040702,Fishes,Morone americana,White Perch,1999,NA,Cook,Calumet Sag Channel,-87.84078343,41.68426996
+33.7,40400010603,Fishes,Hypophthalmichthys nobilis,Bighead Carp,2010,unknown,Cook,Lake Calumet,-87.5949,41.6862
+33.8,40400010603,Fishes,Ctenopharyngodon idella,Grass Carp,2012,NA,Cook,Lake Calumet,-87.582509,41.687164
+33.9,40400010603,Fishes,Ctenopharyngodon idella,Grass Carp,2012,NA,Cook,Lake Calumet,-87.582509,41.687164
+33.1,40400010603,Fishes,Ctenopharyngodon idella,Grass Carp,2012,NA,Cook,Lake Calumet,-87.5882,41.68747
+33.11,40400010603,Fishes,Ctenopharyngodon idella,Grass Carp,2012,NA,Cook,Lake Calumet,-87.587539,41.687607
+63.3,71200040702,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1978,NA,Cook,Saganashkee Slough,-87.8761,41.6896
+63.4,71200040702,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1978,NA,Cook,Saganashkee Slough,-87.884,41.692
+63.5,71200040702,Plants,Puccinellia distans,Weeping Alkaligrass,1997,NA,Cook,NA,-87.8460456,41.69613794
+63.6,71200040702,Fishes,Morone americana,White Perch,1998,NA,Cook,Chicago Sanitary and Ship Canal,-87.94559025,41.69700395
+63.7,71200040702,Fishes,Morone americana,White Perch,2000,NA,Cook,Chicago Sanitary and Ship Canal,-87.94559025,41.69700395
+33.12,40400010603,Fishes,Oncorhynchus tshawytscha,Chinook Salmon,1997,NA,Cook,Calumet River,-87.55309526,41.69712485
+33.13,40400010603,Fishes,Oncorhynchus mykiss,Rainbow Trout,1997,NA,Cook,Calumet River,-87.55309526,41.69712485
+31,71200030401,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1997,NA,Cook,Stony Creek,-87.75965,41.70228
+33.14,40400010603,Fishes,Alosa sapidissima,American Shad,1873,failed,Cook,Calumet River,-87.530479,41.73238
+41,71200040805,Plants,Najas minor,Brittle Waternymph,2011,Collected,Will,Whalon Lake,-88.094795,41.743654
+27,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1938,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.1,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1938,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.2,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1939,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.3,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1939,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.4,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1942,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.5,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1942,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.6,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1943,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.7,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1946,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.8,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1946,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.9,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1950,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.1,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1950,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.11,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1960,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.12,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1960,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.13,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1979,NA,Cook,Jackson Park Lagoon,-87.582,41.785
+27.14,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1995,NA,Cook,Horsetail Lake,-87.582,41.785
+27.15,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1995,NA,Cook,Horsetail Lake,-87.582,41.785
+57.1,71200040705,Fishes,Misgurnus anguillicaudatus,Oriental Weatherfish,1994,NA,Cook,Chicago Sanitary and Ship Canal,-87.82089,41.788921
+27.16,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2000,collected,Cook,Hyde Park Pond,-87.593938,41.794201
+41.1,71200040805,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2008,NA,DuPage,West Branch DuPage River,-88.1872,41.7952
+24,71200030107,Coelenterates,Craspedacusta sowerbyi,freshwater jellyfish,1999,collected,Cook,NA,-87.65722,41.79611
+58,71200040404,Crustaceans,Procambarus clarkii,Red Swamp Crayfish,2010,collected,DuPage,Pond in Prospect Park,-87.959418,41.800527
+27.17,40400020503,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2000,NA,Cook,Hyde Park Pond,-87.58251,41.80276
+46,71200040803,Plants,Typha angustifolia,Narrowleaf Cattail,2007,NA,DuPage,NA,-88.0376,41.8106
+46.1,71200040803,Plants,Phalaris arundinacea,Reed Canarygrass,2007,NA,DuPage,NA,-88.0375,41.8109
+47,71200040804,Plants,Typha angustifolia,Narrowleaf Cattail,2000,NA,DuPage,Etter Marsh,-88.0524,41.8113
+46.2,71200040803,Plants,Phalaris arundinacea,Reed Canarygrass,2000,NA,DuPage,NA,-88.0378,41.8136
+47.1,71200040804,Plants,Lythrum salicaria,Purple Loosestrife,2000,NA,DuPage,Crowley Pond,-88.0608,41.8144
+46.3,71200040803,Plants,Iris pseudacorus,Paleyellow Iris,2000,NA,DuPage,NA,-88.0789,41.8158
+46.4,71200040803,Plants,Iris pseudacorus,Paleyellow Iris,2000,NA,DuPage,NA,-88.0791,41.816
+47.2,71200040804,Plants,Lythrum salicaria,Purple Loosestrife,2006,NA,DuPage,Crowley Pond,-88.0592,41.816
+24.1,71200030107,Fishes,Morone americana,White Perch,2000,NA,Cook,Chicago Sanitary and Ship Canal,-87.74334699,41.81963174
+60.1,71200040706,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1999,NA,Cook,Des Plaines River,-87.82143,41.82121
+24.2,71200030107,Fishes,Hypophthalmichthys nobilis,Bighead Carp,2003,unknown,Cook,Mckinley Park Lake,-87.678409,41.824581
+24.3,71200030107,Fishes,Oreochromis niloticus,Nile Tilapia,2004,locally established,Cook,Chicago Sanitary and Ship Canal,-87.7243,41.8258
+24.4,71200030107,Fishes,Oreochromis niloticus,Nile Tilapia,2004,locally established,Cook,Chicago Sanitary and Ship Canal,-87.7243,41.8258
+24.5,71200030107,Fishes,Oreochromis niloticus,Nile Tilapia,2004,locally established,Cook,Chicago Sanitary and Ship Canal,-87.7243,41.8258
+24.6,71200030107,Fishes,Oreochromis niloticus,Nile Tilapia,2004,locally established,Cook,Chicago Sanitary and Ship Canal,-87.7243,41.8258
+24.7,71200030107,Fishes,Oreochromis niloticus,Nile Tilapia,2004,locally established,Cook,Chicago Sanitary and Ship Canal,-87.7243,41.8258
+24.8,71200030107,Fishes,Oreochromis niloticus,Nile Tilapia,2004,locally established,Cook,Chicago Sanitary and Ship Canal,-87.7243,41.8258
+24.9,71200030107,Fishes,Oreochromis niloticus,Nile Tilapia,2005,locally established,Cook,Chicago Sanitary and Ship Canal,-87.7243,41.8258
+24.1,71200030107,Fishes,Oreochromis niloticus,Nile Tilapia,2005,locally established,Cook,Chicago Sanitary and Ship Canal,-87.7243,41.8258
+24.11,71200030107,Fishes,Oreochromis niloticus,Nile Tilapia,2005,locally established,Cook,Chicago Sanitary and Ship Canal,-87.7243,41.8258
+24.12,71200030107,Fishes,Oreochromis niloticus,Nile Tilapia,2005,locally established,Cook,Chicago Sanitary and Ship Canal,-87.7243,41.8258
+46.5,71200040803,Plants,Typha angustifolia,Narrowleaf Cattail,1997,NA,DuPage,Hidden Lake,-88.0558,41.8265
+58.1,71200040404,Plants,Butomus umbellatus,Flowering Rush,1957,NA,Cook,NA,-87.85,41.8333
+58.2,71200040404,Plants,Mentha x gracilis,Gingermint,1941,NA,Cook,NA,-87.85,41.8333
+58.3,71200040404,Plants,Typha angustifolia,Narrowleaf Cattail,1950,NA,Cook,NA,-87.85,41.8333
+46.6,71200040803,Plants,Typha angustifolia,Narrowleaf Cattail,1993,NA,DuPage,NA,-88.0833,41.8333
+46.7,71200040803,Plants,Typha angustifolia,Narrowleaf Cattail,1997,NA,DuPage,NA,-88.0833,41.8333
+58.4,71200040404,Plants,Lythrum salicaria,Purple Loosestrife,1926,NA,Cook,NA,-87.85,41.8333
+58.5,71200040404,Plants,Lythrum salicaria,Purple Loosestrife,1990,NA,Cook,NA,-87.85,41.8333
+46.8,71200040803,Plants,Lythrum salicaria,Purple Loosestrife,1990,NA,DuPage,NA,-88.0833,41.8333
+46.9,71200040803,Plants,Lythrum salicaria,Purple Loosestrife,1993,NA,DuPage,NA,-88.0833,41.8333
+46.1,71200040803,Plants,Lythrum salicaria,Purple Loosestrife,1998,NA,DuPage,NA,-88.0833,41.8333
+58.6,71200040404,Plants,Myosotis scorpioides,True Forget-Me-Not,1926,NA,Cook,NA,-87.85,41.8333
+58.7,71200040404,Plants,Myosotis scorpioides,True Forget-Me-Not,1958,NA,Cook,NA,-87.85,41.8333
+58.8,71200040404,Plants,Myosotis scorpioides,True Forget-Me-Not,1960,NA,Cook,NA,-87.85,41.8333
+24.13,71200030107,Reptiles-Crocodilians,Alligator mississippiensis,American Alligator,2008,failed,Cook,Bubbly Creek,-87.6598,41.8339
+24.14,71200030107,Fishes,Oreochromis niloticus,Nile Tilapia,2004,collected,Cook,Bubbly Creek,-87.6598,41.8339
+24.15,71200030107,Plants,Lythrum salicaria,Purple Loosestrife,2011,Collected,Cook,Chicago Sanitary and Ship Canal,-87.686435,41.836962
+57.2,71200040705,Plants,Najas minor,Brittle Waternymph,2010,collected,Cook,NA,-87.767817,41.837649
+57.3,71200040705,Plants,Rorippa sylvestris,Creeping Yellowcress,2008,collected,Cook,NA,-87.767817,41.837649
+57.4,71200040705,Plants,Typha angustifolia,Narrowleaf Cattail,2008,collected,Cook,NA,-87.767817,41.837649
+57.5,71200040705,Plants,Iris pseudacorus,Paleyellow Iris,2008,collected,Cook,NA,-87.767817,41.837649
+57.6,71200040705,Fishes,Scardinius erythrophthalmus,Rudd,1990,collected,Cook,Coon Creek,-87.767817,41.837649
+57.7,71200040705,Plants,Myosotis scorpioides,True Forget-Me-Not,2008,collected,Cook,NA,-87.767817,41.837649
+57.8,71200040705,Plants,Mentha aquatica,Water Mint,2008,collected,Cook,NA,-87.767817,41.837649
+57.9,71200040705,Plants,Nasturtium officinale,Watercress,2008,collected,Cook,NA,-87.767817,41.837649
+57.1,71200040705,Plants,Puccinellia distans,Weeping Alkaligrass,2008,collected,Cook,NA,-87.767817,41.837649
+24.16,71200030107,Fishes,Misgurnus anguillicaudatus,Oriental Weatherfish,1994,NA,Cook,Chicago Sanitary and Ship Canal,-87.676392,41.841112
+24.17,71200030107,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1991,NA,Cook,Chicago Sanitary and Ship Canal,-87.67542,41.84171
+24.18,71200030107,Fishes,Carassius carassius,Crucian Carp,1910,failed,Cook,NA,-87.654419,41.853196
+24.19,71200030107,Fishes,Morone americana,White Perch,1993,NA,Cook,South Branch Chicago River,-87.63672156,41.85567374
+46.11,71200040803,Plants,Najas minor,Brittle Waternymph,2010,collected,DuPage,NA,-88.063587,41.856029
+46.12,71200040803,Plants,Rorippa sylvestris,Creeping Yellowcress,2008,collected,DuPage,NA,-88.063587,41.856029
+46.13,71200040803,Plants,Typha angustifolia,Narrowleaf Cattail,2008,collected,DuPage,NA,-88.063587,41.856029
+46.14,71200040803,Plants,Iris pseudacorus,Paleyellow Iris,2008,collected,DuPage,NA,-88.063587,41.856029
+46.15,71200040803,Plants,Lythrum salicaria,Purple Loosestrife,2008,collected,DuPage,NA,-88.063587,41.856029
+46.16,71200040803,Plants,Myosotis scorpioides,True Forget-Me-Not,2008,collected,DuPage,NA,-88.063587,41.856029
+46.17,71200040803,Plants,Mentha aquatica,Water Mint,2008,collected,DuPage,NA,-88.063587,41.856029
+46.18,71200040803,Plants,Nasturtium officinale,Watercress,2008,collected,DuPage,NA,-88.063587,41.856029
+46.19,71200040803,Plants,Puccinellia distans,Weeping Alkaligrass,2008,collected,DuPage,NA,-88.063587,41.856029
+24.2,71200030107,Fishes,Salmo trutta,Brown Trout,1991,NA,Cook,Chicago River,-87.6368003,41.87571347
+24.21,71200030107,Fishes,Oncorhynchus kisutch,Coho Salmon,1990,NA,Cook,Chicago River,-87.6368003,41.87571347
+24.22,71200030107,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1993,NA,Cook,Chicago River,-87.6368003,41.87571347
+57.11,71200040705,Fishes,Hypophthalmichthys nobilis,Bighead Carp,2011,extirpated,Cook,Columbus Park Lagoon,-87.766557,41.875888
+57.12,71200040705,Fishes,Ctenopharyngodon idella,Grass Carp,2011,failed,Cook,Columbus Park Lagoon,-87.766557,41.875888
+24.23,71200030107,Fishes,Morone americana,White Perch,2006,NA,Cook,Chicago River,-87.63,41.88
+24.24,71200030107,Fishes,Hypophthalmichthys nobilis,Bighead Carp,2010,extirpated,Cook,Garfield Park Lagoon,-87.717612,41.88287
+24.25,71200030107,Fishes,Hypophthalmichthys nobilis,Bighead Carp,2012,unknown,Cook,Garfield Park Lagoon,-87.71827,41.88322
+46.2,71200040803,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2009,NA,DuPage,East Branch DuPage River,-88.03656,41.88351
+46.21,71200040803,Fishes,Petromyzon marinus,Sea Lamprey,1957,NA,DuPage,DuPage River,-88.03343313,41.88463241
+46.22,71200040803,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2009,NA,DuPage,East Branch DuPage River,-88.0387,41.8854
+46.23,71200040803,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2009,NA,DuPage,East Branch DuPage River,-88.0387,41.8854
+24.26,71200030107,Fishes,Oncorhynchus tshawytscha,Chinook Salmon,1990,NA,Cook,Chicago River,-87.63755,41.88624
+24.27,71200030107,Fishes,Oncorhynchus kisutch,Coho Salmon,1990,NA,Cook,Chicago River,-87.63755,41.88624
+24.28,71200030107,Fishes,Osmerus mordax,Rainbow Smelt,1987,NA,Cook,Chicago River,-87.63755,41.88624
+24.29,71200030107,Fishes,Morone americana,White Perch,1991,NA,Cook,Chicago River,-87.63755,41.88624
+53,40400020502,Fishes,Osmerus mordax,Rainbow Smelt,1987,NA,Cook,Chicago River,-87.61836915,41.8901648
+26,71200030106,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1996,NA,Cook,North Branch Chicago River,-87.64112,41.89134
+66,71200040506,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1999,NA,Cook,Des Plaines River,-87.82981,41.8926
+48,71200040802,Fishes,Colossoma or Piaractus sp.,Unidentified Pacu,2004,failed,DuPage,Lake Becera,-88.093196,41.893141
+53.1,40400020502,Fishes,Hypophthalmichthys nobilis,Bighead Carp,2008,eradicated,Cook,Lincoln Park South Lagoon,-87.63236,41.91697
+67,71200040402,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1999,NA,DuPage,NA,-88.01164,41.91744
+26.1,71200030106,Reptiles-Crocodilians,Alligator mississippiensis,American Alligator,2010,failed,Cook,Chicago River,-87.692,41.9396
+53.2,40400020502,Mollusks,Radix auricularia,European Ear Snail,1901,unknown,Cook,NA,-87.635579,41.944362
+53.3,40400020502,Mollusks,Radix auricularia,European Ear Snail,1901,unknown,Cook,NA,-87.641909,41.949501
+53.4,40400020502,Mollusks,Radix auricularia,European Ear Snail,1901,unknown,Cook,NA,-87.641909,41.949501
+66.1,71200040506,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2006,NA,Cook,Des Plaines River,-87.8544,41.9542
+66.2,71200040506,Fishes,Hypophthalmichthys nobilis,Bighead Carp,2011,unknown,Cook,Schiller Park Pond,-87.83984,41.95746
+26.2,71200030106,Fishes,Misgurnus anguillicaudatus,Oriental Weatherfish,1992,NA,Cook,North Branch Chicago River,-87.70134721,41.96868753
+26.3,71200030106,Fishes,Pterygoplichthys x Pterygoplichthys disjunctivus x pardalis,Vermiculated Sailfin Catfish X Amazon Sailfin Catfish,2004,NA,Cook,North Branch Chicago River,-87.7043,41.9733
+67.1,71200040402,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2009,NA,DuPage,Salt Creek,-87.99075,41.98364
+21,71200030104,Fishes,Misgurnus anguillicaudatus,Oriental Weatherfish,1991,NA,Cook,North Shore Channel,-87.70959,41.99184
+21.1,71200030104,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1992,NA,Cook,North Shore Channel,-87.70959,41.99184
+21.2,71200030104,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1996,NA,Cook,North Shore Channel,-87.70959,41.99184
+35,71200061205,Plants,Lythrum salicaria,Purple Loosestrife,1984,NA,Cook,NA,-88.2529303,42.00838617
+35.1,71200061205,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2002,NA,Cook,Kollar Park Pond,-88.1694,42.0097
+21.3,71200030104,Fishes,Misgurnus anguillicaudatus,Oriental Weatherfish,1994,NA,Cook,North Shore Channel,-87.71042,42.01187
+21.4,71200030104,Fishes,Oncorhynchus mykiss,Rainbow Trout,1995,NA,Cook,North Shore Channel,-87.71042,42.01187
+21.5,71200030104,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1996,NA,Cook,North Shore Channel,-87.71042,42.01187
+35.2,71200061205,Plants,Lythrum salicaria,Purple Loosestrife,2010,NA,Cook,NA,-88.17643,42.018183
+35.3,71200061205,Plants,Phalaris arundinacea,Reed Canarygrass,1978,NA,Cook,NA,-88.25301051,42.02311059
+35.4,71200061205,Plants,Nasturtium officinale,Watercress,1977,NA,Cook,NA,-88.25301051,42.02311059
+64,71200040401,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2011,NA,Cook,Busse Lake,-88.01053,42.02628
+61,71200040504,Plants,Juncus compressus,Roundfruit Rush,2006,NA,Cook,NA,-87.96719,42.03096
+35.5,71200061205,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2011,NA,Cook,Poplar Creek,-88.2304,42.0331
+53.5,40400020502,Plants,Rorippa sylvestris,Creeping Yellowcress,1888,NA,Cook,NA,-87.6833,42.0333
+22,71200030105,Plants,Typha angustifolia,Narrowleaf Cattail,1956,NA,Cook,NA,-87.7667,42.0333
+18,71200040505,Fishes,Tinca tinca,Tench,1891,failed,Cook,Des Plaines River,-87.880089,42.033787
+21.6,71200030104,Fishes,Misgurnus anguillicaudatus,Oriental Weatherfish,1990,NA,Cook,North Shore Channel,-87.70974,42.04092
+21.7,71200030104,Fishes,Misgurnus anguillicaudatus,Oriental Weatherfish,1990,NA,Cook,North Shore Channel,-87.70974,42.04092
+21.8,71200030104,Fishes,Misgurnus anguillicaudatus,Oriental Weatherfish,1991,NA,Cook,North Shore Channel,-87.70974,42.04092
+21.9,71200030104,Fishes,Misgurnus anguillicaudatus,Oriental Weatherfish,1991,NA,Cook,North Shore Channel,-87.70974,42.04092
+21.1,71200030104,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1992,NA,Cook,North Shore Channel,-87.70974,42.04092
+61.1,71200040504,Plants,Typha angustifolia,Narrowleaf Cattail,2006,NA,Cook,NA,-87.99066,42.04304
+35.6,71200061205,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2011,NA,Cook,Poplar Creek,-88.21442,42.04486
+35.7,71200061205,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2008,NA,Cook,Poplar Creek,-88.21442,42.04499
+35.8,71200061205,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1999,NA,Cook,Poplar Creek,-88.20319,42.04849
+18.1,71200040505,Plants,Phalaris arundinacea,Reed Canarygrass,1982,NA,Cook,NA,-87.87473371,42.05968183
+18.2,71200040505,Plants,Phalaris arundinacea,Reed Canarygrass,1982,NA,Cook,NA,-87.87473371,42.05968183
+18.3,71200040505,Plants,Phalaris arundinacea,Reed Canarygrass,1982,NA,Cook,NA,-87.87473371,42.05968183
+18.4,71200040505,Plants,Phalaris arundinacea,Reed Canarygrass,1982,NA,Cook,NA,-87.87473371,42.05968183
+64.1,71200040401,Plants,Juncus compressus,Roundfruit Rush,2006,NA,Cook,NA,-88.10087,42.06624
+35.9,71200061205,Plants,Juncus compressus,Roundfruit Rush,2006,NA,Cook,NA,-88.15063,42.06638
+18.5,71200040505,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1998,NA,Cook,Beck Lake,-87.87352,42.07171
+21.11,71200030104,Fishes,Salmo trutta,Brown Trout,1991,NA,Cook,North Shore Channel,-87.68512,42.07541
+21.12,71200030104,Fishes,Oncorhynchus tshawytscha,Chinook Salmon,1992,NA,Cook,North Shore Channel,-87.68512,42.07541
+21.13,71200030104,Fishes,Oncorhynchus tshawytscha,Chinook Salmon,1994,NA,Cook,North Shore Channel,-87.68512,42.07541
+21.14,71200030104,Fishes,Oncorhynchus kisutch,Coho Salmon,1992,NA,Cook,North Shore Channel,-87.68512,42.07541
+21.15,71200030104,Fishes,Oncorhynchus mykiss,Rainbow Trout,1979,NA,Cook,North Shore Channel,-87.68512,42.07541
+21.16,71200030104,Fishes,Oncorhynchus mykiss,Rainbow Trout,1995,NA,Cook,North Shore Channel,-87.68512,42.07541
+21.17,71200030104,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1991,NA,Cook,North Shore Channel,-87.68512,42.07541
+21.18,71200030104,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1992,NA,Cook,North Shore Channel,-87.68512,42.07541
+21.19,71200030104,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1993,NA,Cook,North Shore Channel,-87.68512,42.07541
+21.2,71200030104,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1998,NA,Cook,North Shore Channel,-87.68512,42.07541
+54,71200040503,Plants,Polygonum hydropiper,Marshpepper Knotweed,2005,NA,Cook,NA,-87.8813,42.11819
+51,71200061104,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2007,NA,Cook,Bulrush Pond,-88.1606,42.12
+54.1,71200040503,Plants,Juncus compressus,Roundfruit Rush,2005,NA,Cook,NA,-87.88744,42.12834
+54.2,71200040503,Plants,Phalaris arundinacea,Reed Canarygrass,1980,NA,Cook,NA,-87.89752986,42.13130015
+53.6,40400020502,Plants,Rorippa sylvestris,Creeping Yellowcress,1989,NA,Cook,NA,-87.75,42.1333
+53.7,40400020502,Plants,Myosotis scorpioides,True Forget-Me-Not,2006,NA,Cook,NA,-87.77306,42.14804
+55,71200030101,Plants,Polygonum hydropiper,Marshpepper Knotweed,2006,NA,Cook,NA,-87.78513,42.1522
+54.3,71200040503,Plants,Rorippa sylvestris,Creeping Yellowcress,2007,NA,Lake,NA,-87.91358,42.16706
+54.4,71200040503,Plants,Puccinellia distans,Weeping Alkaligrass,2007,NA,Lake,NA,-87.91116,42.16777
+50,71200030102,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2011,NA,Lake,Middle Fork North Branch Chicago River,-87.8376,42.17869
+51.1,71200061104,Plants,Eichhornia crassipes,Common Water Hyacinth,2003,failed,Lake,Flint Lake,-88.16915,42.20319
+14,71200061105,Fishes,Scardinius erythrophthalmus,Rudd,1988,NA,Lake,Fox River,-88.176441,42.223433
+14.1,71200061105,Plants,Lythrum salicaria,Purple Loosestrife,2010,Collected,Lake,Fox River,-88.186821,42.238606
+55.1,71200030101,Plants,Lythrum salicaria,Purple Loosestrife,1977,NA,Lake,NA,-87.85672632,42.26157532
+55.2,71200030101,Plants,Lythrum salicaria,Purple Loosestrife,1977,NA,Lake,NA,-87.85672632,42.26157532
+55.3,71200030101,Plants,Phalaris arundinacea,Reed Canarygrass,1977,NA,Lake,NA,-87.85672632,42.26157532
+4,71200061103,Fishes,Piaractus brachypomus,"Pirapatinga, Red-Bellied Pacu",2005,failed,Lake,Bangs Lake,-88.13281455,42.26572476
+4.1,71200061103,Plants,Lythrum salicaria,Purple Loosestrife,2010,Collected,Lake,Bangs Lake,-88.129332,42.271537
+6,71200040302,Plants,Egeria densa,Brazilian Waterweed,2008,NA,Lake,NA,-87.9845,42.2971
+50.1,71200030102,Plants,Lythrum salicaria,Purple Loosestrife,1981,NA,Lake,NA,-87.89522183,42.30533492
+1,40400020501,Fishes,Salmo trutta,Brown Trout,1999,NA,Lake,trib. Lake Michigan,-87.83592,42.30929
+1.1,40400020501,Fishes,Oncorhynchus tshawytscha,Chinook Salmon,1999,NA,Lake,trib. Lake Michigan,-87.83592,42.30929
+6.1,71200040302,Plants,Mentha x gracilis,Gingermint,2008,collected,Lake,NA,-87.983801,42.313322
+6.2,71200040302,Plants,Typha angustifolia,Narrowleaf Cattail,2008,collected,Lake,NA,-87.983801,42.313322
+6.3,71200040302,Plants,Iris pseudacorus,Paleyellow Iris,2008,collected,Lake,NA,-87.983801,42.313322
+6.4,71200040302,Plants,Lythrum salicaria,Purple Loosestrife,2008,collected,Lake,NA,-87.983801,42.313322
+6.5,71200040302,Plants,Myosotis scorpioides,True Forget-Me-Not,2008,collected,Lake,NA,-87.983801,42.313322
+6.6,71200040302,Plants,Mentha aquatica,Water Mint,2008,collected,Lake,NA,-87.983801,42.313322
+6.7,71200040302,Plants,Nasturtium officinale,Watercress,2008,collected,Lake,NA,-87.983801,42.313322
+6.8,71200040302,Plants,Puccinellia distans,Weeping Alkaligrass,2008,collected,Lake,NA,-87.983801,42.313322
+8,71200061008,Fishes,Scardinius erythrophthalmus,Rudd,1988,collected,Lake,NA,-88.132324,42.322001
+9,71200040202,Plants,Polygonum hydropiper,Marshpepper Knotweed,1989,NA,Lake,NA,-88.03382279,42.33494534
+1.2,40400020501,Fishes,Oncorhynchus kisutch,Coho Salmon,2002,NA,Lake,S. Br. Waukegan River,-87.84,42.34
+9.1,71200040202,Fishes,Scardinius erythrophthalmus,Rudd,1988,NA,Lake,NA,-88.034005,42.343542
+9.2,71200040202,Fishes,Scardinius erythrophthalmus,Rudd,1988,NA,Lake,Avon-fremont Ditch,-88.03336261,42.34427597
+9.3,71200040202,Plants,Najas minor,Brittle Waternymph,2012,Collected,Lake,Gages Lake,-87.991008,42.346017
+9.4,71200040202,Plants,Najas minor,Brittle Waternymph,2012,Collected,Lake,Gages Lake,-88.000843,42.354941
+1.3,40400020501,Fishes,Oncorhynchus tshawytscha,Chinook Salmon,2000,NA,Lake,Waukegan River,-87.83567,42.35763
+1.4,40400020501,Fishes,Oncorhynchus kisutch,Coho Salmon,2000,NA,Lake,Waukegan River,-87.83567,42.35763
+1.5,40400020501,Fishes,Oncorhynchus mykiss,Rainbow Trout,2000,NA,Lake,Waukegan River,-87.83567,42.35763
+1.6,40400020501,Fishes,Salmo trutta,Brown Trout,1997,NA,Lake,Waukegan River,-87.83732,42.35956
+1.7,40400020501,Fishes,Oncorhynchus tshawytscha,Chinook Salmon,1997,NA,Lake,Waukegan River,-87.83732,42.35956
+1.8,40400020501,Fishes,Oncorhynchus kisutch,Coho Salmon,1997,NA,Lake,Waukegan River,-87.83732,42.35956
+1.9,40400020501,Fishes,Oncorhynchus kisutch,Coho Salmon,1997,NA,Lake,Waukegan River,-87.83732,42.35956
+1.1,40400020501,Fishes,Oncorhynchus mykiss,Rainbow Trout,1998,NA,Lake,Waukegan River,-87.83732,42.35956
+1.11,40400020501,Fishes,Oncorhynchus mykiss,Rainbow Trout,1998,NA,Lake,Waukegan River,-87.83732,42.35956
+1.12,40400020501,Fishes,Oncorhynchus mykiss,Rainbow Trout,2003,NA,Lake,Waukegan River,-87.83732,42.35956
+1.13,40400020501,Fishes,Poecilia latipinna,Sailfin Molly,1998,NA,Lake,Waukegan River,-87.83732,42.35956
+1.14,40400020501,Fishes,Poecilia latipinna,Sailfin Molly,1998,NA,Lake,Waukegan River,-87.83732,42.35956
+1.15,40400020501,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1997,NA,Lake,Waukegan River,-87.83732,42.35956
+1.16,40400020501,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1997,NA,Lake,Waukegan River,-87.83732,42.35956
+1.17,40400020501,Fishes,Gasterosteus aculeatus,Threespine Stickleback,1997,NA,Lake,Waukegan River,-87.83732,42.35956
+8.1,71200061008,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2001,NA,Lake,Squaw Creek,-88.12657,42.36722
+8.2,71200061008,Plants,Najas minor,Brittle Waternymph,2010,Collected,Lake,Round Lake,-88.08331,42.368822
+8.3,71200061008,Plants,Najas minor,Brittle Waternymph,2012,Collected,Lake,Round Lake,-88.08331,42.368822
+9.5,71200040202,Plants,Najas minor,Brittle Waternymph,2012,Collected,Lake,Third Lake,-88.014173,42.374573
+8.4,71200061008,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2001,collected,Lake,Squaw Creek,-88.137305,42.375021
+8.5,71200061008,Plants,Lythrum salicaria,Purple Loosestrife,2010,Collected,Lake,Long Lake,-88.1256,42.381265
+9.6,71200040202,Plants,Eichhornia crassipes,Common Water Hyacinth,2000,failed,Lake,Grandwood Park Lake,-87.9916,42.39072
+1.18,40400020501,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1992,NA,Lake,Dead River,-87.80696,42.40972
+9.7,71200040202,Plants,Polygonum hydropiper,Marshpepper Knotweed,2005,NA,Lake,Old Mill Creek,-87.94706,42.41782
+2,71200061004,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,2005,NA,Lake,Cedar Lake,-88.0813,42.4196
+2.1,71200061004,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1999,NA,Lake,Cedar Lake,-88.08304,42.42468
+1.19,40400020501,Plants,Glyceria maxima,Reed Mannagrass,2006,unknown,Lake,NA,-87.8136,42.4285
+9.8,71200040202,Plants,Juncus compressus,Roundfruit Rush,2005,NA,Lake,NA,-87.9494,42.42856
+10,71200061009,Plants,Lythrum salicaria,Purple Loosestrife,1977,NA,Lake,Mud Lake,-88.18886329,42.43737898
+10.1,71200061009,Plants,Lythrum salicaria,Purple Loosestrife,1978,NA,Lake,Mud Lake,-88.18886329,42.43737898
+12,71200061006,Plants,Lythrum salicaria,Purple Loosestrife,2009,NA,Lake,NA,-88.19199,42.4441
+10.2,71200061009,Plants,Eichhornia crassipes,Common Water Hyacinth,2012,NA,Lake,Spring Lake,-88.12405,42.44752
+12.1,71200061006,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1999,NA,Lake,Turner Lake,-88.18864,42.44814
+10.3,71200061009,Plants,Lythrum salicaria,Purple Loosestrife,1975,NA,Lake,NA,-88.14958798,42.45182857
+12.2,71200061006,Plants,Typha angustifolia,Narrowleaf Cattail,1978,NA,Lake,Turner Lake,-88.18888522,42.4519736
+2.2,71200061004,Reptiles-Crocodilians,Alligator mississippiensis,American Alligator,2005,failed,Lake,East Loon Lake,-88.07320193,42.45349655
+7,71200040301,Plants,Puccinellia distans,Weeping Alkaligrass,2005,NA,Lake,NA,-87.96292,42.4614
+12.3,71200061006,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1988,NA,Lake,Fox River,-88.17794,42.47112
+7.1,71200040301,Plants,Juncus compressus,Roundfruit Rush,2005,NA,Lake,NA,-87.96223,42.47167
+12.4,71200061006,Mollusks,Cipangopaludina chinensis malleata,Chinese Mystery Snail,1999,NA,Lake,Fox River,-88.17865,42.4789
+7.2,71200040301,Plants,Najas minor,Brittle Waternymph,2011,Collected,Lake,Sterling Lake,-87.945099,42.482977
+7.3,71200040301,Plants,Juncus compressus,Roundfruit Rush,2005,NA,Lake,NA,-87.94768,42.48452
+48.1,71200040802,Plants,Najas minor,Brittle Waternymph,1998,NA,DuPage,Mallard Lake,-88.12976,41.91537
+33.15,40400010603,Plants,Najas minor,Brittle Waternymph,2001,NA,Cook,Powderhorn Lake,-87.53044,41.6419
+41.2,71200040805,Plants,Mentha x gracilis,Gingermint,1993,NA,DuPage,Herrick Lake,-88.1433083,41.8283083
+35.1,71200061205,Plants,Mentha x gracilis,Gingermint,2002,NA,Cook,Crabtree Lake,-88.1665583,42.1131889
+33.16,40400010603,Fishes,Ctenopharyngodon idella,Grass Carp,2011,NA,Cook,Lake Calumet,-87.5914972,41.6778361
+33.17,40400010603,Fishes,Ctenopharyngodon idella,Grass Carp,2012,NA,Cook,Lake Calumet,-87.5914972,41.6778361
+10.4,71200061009,Plants,Typha angustifolia,Narrowleaf Cattail,1932,NA,Lake,Lake Marie,-88.1364777,42.465375
+9.9,71200040202,Plants,Typha angustifolia,Narrowleaf Cattail,1938,NA,Lake,Fourth Lake,-88.033177,42.3914833
+46.24,71200040803,Plants,Typha angustifolia,Narrowleaf Cattail,1971,NA,DuPage,Meadow Lake,-88.0523305,41.8284056
+9.1,71200040202,Plants,Typha angustifolia,Narrowleaf Cattail,NA,NA,Lake,Fourth Lake,-88.033177,42.3914833
+8.6,71200061008,Plants,Juncus compressus,Roundfruit Rush,1986,NA,Lake,Long Lake,-88.127227,42.3771278
