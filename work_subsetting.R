@@ -88,4 +88,22 @@ write.csv(huc_population, file="huc_populations.csv")
 
 dt <- read.csv("~/InvasivePets/MasterDataSheet_temperature")
 
+output$cntymap_cn <-renderLeaflet({
+  leaflet(cnty)%>%
+    addProviderTiles('Esri.WorldImagery', group='Esri')%>% 
+    addProviderTiles('Stamen.TonerLite', group='Stamen')%>% 
+    addLayersControl(baseGroups=c('Esri','Stamen'))%>%
+    addProviderTiles(providers$Stamen.TonerLite,
+                     options = providerTileOptions(noWrap = TRUE)
+    ) %>% 
+    addPolygons()%>%
+    addCircles(
+      data = filteredData_cn(), 
+      radius = ~count, 
+      lat = ~Latitude, 
+      lng = ~Longitude,
+      col='red'
+    )
+})
+
 
