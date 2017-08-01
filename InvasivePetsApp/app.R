@@ -23,13 +23,15 @@ tab <- as.data.table(dt)
 tab[,Max_Temp := as.numeric(Max_Temp)]
 tab[,Min_Temp := as.numeric(Min_Temp)]
 tab[,YearEndCDa:=as.numeric(YearEndCDa)]
-cn<-tab[, unique(common)]
+
 
 huc_pop <- read.csv("~/InvasivePets/huc_populations.csv")
-
 hp <- as.data.table(huc_pop)
+hp[,Population := as.numeric(Population)] 
 
-hp[,Population := as.numeric(Population)]
+
+hg <- read.csv("~/InvasivePets/huc_gps_table.csv")
+hg <- as.data.table(hg)
 
 grp1 <- as.data.frame(hp[,
                           .(
@@ -41,15 +43,23 @@ grp1 <- as.data.frame(hp[,
                          )]
                       )
 
-grp2 <- as.data.frame(dt[,
-                         .(
-                           count=.N,
-                           Latitude= Latitude, na.rm=T,
-                           Longitude= Longitude, na.rm=T
-                         ),
-                         by =
-                           common 
-                         ])
+#grp2 <- as.data.frame(hg[,
+#                         .(
+#                           count=.N,
+#                           Latitude= Latitude, na.rm=T,
+#                           Longitude= Longitude, na.rm=T
+#                         ),
+#                         by = list(
+#                           common,
+#                           HUC12_1
+#                           )]
+#                      )
+
+hg_count <- setDT(hg)[ , .(
+  count=.N) ,
+  by = .(common,HUC12_1)]
+count_pop <- merge(hp,hg_count,by="HUC12_1")
+
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -61,9 +71,9 @@ ui <- fluidPage(
    sidebarLayout(
       sidebarPanel(
         selectInput("variable", "First variable:",
-                    list( "HUC" = "HUC12_1")),
+                    list( "HUC" = "Population")),
         selectInput("variable2", "Second variable:",
-                    list ("Population size" = "Population"))
+                    list ("Number of Individuals Caught" = "count_pop$count"))
         
       ), 
       # Show a plot of the generated distribution
@@ -78,7 +88,7 @@ ui <- fluidPage(
 server <- function(input, output) {
   text <- reactive({
     paste(input$variable, 'versus', input$variable2)
-  })
+    })
   
   # Return as text the selected variables
   output$caption <- renderText({
@@ -87,7 +97,8 @@ server <- function(input, output) {
   
   # Generate a plot of the requested variables
   output$plot <- renderPlot({
-    p <- ggplot(data, aes_string(x=input$variable, y=input$variable2)) + geom_point()
+    p <- ggplot(data, aes_string(x=input$variable, y=input$variable2)) #+ 
+#      geom_point()
     print(p)
    })
 }
