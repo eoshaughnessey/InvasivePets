@@ -86,25 +86,19 @@ huc_population<-centroid_huc_crop %>%
 View(huc_population)
 write.csv(huc_population, file="huc_populations.csv")
 
-dt <- read.csv("~/InvasivePets/MasterDataSheet_temperature")
-
-output$cntymap_cn <-renderLeaflet({
-  leaflet(cnty)%>%
-    addProviderTiles('Esri.WorldImagery', group='Esri')%>% 
-    addProviderTiles('Stamen.TonerLite', group='Stamen')%>% 
-    addLayersControl(baseGroups=c('Esri','Stamen'))%>%
-    addProviderTiles(providers$Stamen.TonerLite,
-                     options = providerTileOptions(noWrap = TRUE)
-    ) %>% 
-    addPolygons()%>%
-    addCircles(
-      data = filteredData_cn(), 
-      radius = ~count, 
-      lat = ~Latitude, 
-      lng = ~Longitude,
-      col='red'
-    )
-})
+#merge huc population sizes with other data
+huc_pop <- read.csv("~/InvasivePets/huc_populations.csv", 
+                    stringsAsFactors = FALSE)
+hp <- as.data.table(huc_pop)
+hp[,Population := as.numeric(Population)] 
 
 
+hg <- read.csv("~/InvasivePets/huc_gps_table.csv",
+               stringsAsFactors = FALSE)
+hg <- as.data.table(hg)
+
+hg_count <- setDT(hg)[ , .(
+  count=.N) ,
+  by = .(common,HUC12_1)]
+count_pop <- merge(hp,hg_count,by="HUC12_1")
 
