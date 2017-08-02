@@ -17,7 +17,8 @@ library(datasets)
 library(ggplot2)
 
 
-dt <- read.csv("~/InvasivePets/MasterDataSheet_temperature.csv")
+dt <- read.csv("~/InvasivePets/MasterDataSheet_temperature.csv",
+               stringsAsFactors = FALSE)
 
 tab <- as.data.table(dt)
 tab[,Max_Temp := as.numeric(Max_Temp)]
@@ -25,7 +26,8 @@ tab[,Min_Temp := as.numeric(Min_Temp)]
 tab[,YearEndCDa:=as.numeric(YearEndCDa)]
 
 
-huc_pop <- read.csv("~/InvasivePets/huc_populations.csv")
+huc_pop <- read.csv("~/InvasivePets/huc_populations.csv",
+                    stringsAsFactors = FALSE)
 hp <- as.data.table(huc_pop)
 hp[,Population := as.numeric(Population)] 
 
@@ -33,15 +35,16 @@ hp[,Population := as.numeric(Population)]
 hg <- read.csv("~/InvasivePets/huc_gps_table.csv")
 hg <- as.data.table(hg)
 
-grp1 <- as.data.frame(hp[,
-                          .(
-                            count = .N
-                            ),
-                         by = list (
-                           HUC12_1,
-                           Population
-                         )]
-                      )
+
+#grp1 <- as.data.frame(hp[,
+#                          .(
+#                            count = .N
+#                           ),
+#                         by = list (
+#                           HUC12_1,
+#                           Population
+#                         )]
+#                     )
 
 #grp2 <- as.data.frame(hg[,
 #                         .(
@@ -58,7 +61,11 @@ grp1 <- as.data.frame(hp[,
 hg_count <- setDT(hg)[ , .(
   count=.N) ,
   by = .(common,HUC12_1)]
-count_pop <- merge(hp,hg_count,by="HUC12_1")
+count_pop <-merge(hp,hg_count,by="HUC12_1")
+count_pop[156,4] <- "Piraoatinga"
+count_pop$common<-gsub('\\s+', '_', count_pop$common)
+#cn<-count_pop[, unique(common)]
+#cn <- parse(text=gsub(' ', '_', cn))
 
 
 # Define UI for application that draws a histogram
@@ -70,37 +77,78 @@ ui <- fluidPage(
    # Sidebar with a slider input for number of bins 
    sidebarLayout(
       sidebarPanel(
-        selectInput("variable", "First variable:",
-                    list( "HUC" = "Population")),
+         conditionalPanel(
+            condition="input.conditionedPanels==1",
+        selectInput( "variable", "First variable:",
+                  list( "Population" = "count_pop$Population")),
         selectInput("variable2", "Second variable:",
-                    list ("Number of Individuals Caught" = "count_pop$count"))
-        
+                   list ("Number of Individuals Caught" = "count_pop$count"))
+      )
+      ,
+      conditionalPanel(
+        condition="input.conditionedPanels==2",
+        selectInput("Variable", "Population size:",
+                    list("Population size" = "count_pop$Population")),
+        selectInput("Variable2", "Species:",
+                    choices=count_pop[, unique(common)])
+      )
       ), 
       # Show a plot of the generated distribution
       mainPanel(
-        h3(textOutput("caption")),
-        plotOutput("plot")
+#        h3(textOutput("caption")),
+#        plotOutput("plot"),
+        tabsetPanel(
+          #create tabs so you don't have to scroll down
+          tabPanel("Overall", 
+                   plotOutput("plot"), 
+                   h3(textOutput("caption")),
+                   value=1
+                   ),
+          tabPanel("Species", 
+                   plotOutput("plot2"),
+                   h3(textOutput("caption2")),
+                   value=2
+                   ),
+          id="conditionedPanels"
+        )
       )
    )
 )
 
+
 # Define server logic required to draw a histogram
 server <- function(input, output) {
-  text <- reactive({
-    paste(input$variable, 'versus', input$variable2)
+    text1 <- reactive({
+    paste('Population size versus All Occurences')
+  })
+    text2<-reactive({
+      paste('Population size versus Specie Occurence(s)')
     })
   
   # Return as text the selected variables
   output$caption <- renderText({
-    text()
+    text1()
   })
+  
+  output$caption2 <- renderText({
+    text2()
+  })
+  
   
   # Generate a plot of the requested variables
   output$plot <- renderPlot({
-    p <- ggplot(data, aes_string(x=input$variable, y=input$variable2)) #+ 
-#      geom_point()
+    p <- ggplot(count_pop, aes_string(x=input$variable, y=input$variable2, 
+                                      col="common")) + 
+      geom_point()
     print(p)
    })
+  
+#theres something wrong with this code  
+  output$plot2 <- renderPlot({
+    p2<-ggplot(count_pop, aes_string(x=input$Variable, y=input$Variable2))+
+      geom_point()
+    print(p2)
+  })
 }
 
 # Run the application 
