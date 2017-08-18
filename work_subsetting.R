@@ -97,8 +97,28 @@ hg <- read.csv("~/InvasivePets/huc_gps_table.csv",
                stringsAsFactors = FALSE)
 hg <- as.data.table(hg)
 
+#fix this to count species not individuals
 hg_count <- setDT(hg)[ , .(
   count=.N) ,
-  by = .(common,HUC12_1)]
-count_pop <- merge(hp,hg_count,by="HUC12_1")
+  by = .(HUC12_1,common)]
+View(hg_count)
+count_pop <- merge(hp,hg_count,by="HUC12_1", all=TRUE)
+count_pop[is.na(count_pop)]<-0
+View(count_pop)
 
+
+#linear regression of total species counts per huc
+y<-as.data.table(count_pop)[,sum(count), by=.(Population)]
+colnames(y)<-c("Population", "count")
+head(y)
+reg<-lm(Population~count, data=y)
+
+summary(reg)
+
+plot(y$Population, y$count,
+     xlab="population", 
+     ylab="count", 
+     pch=19
+     )
+
+abline(lm(count~Population, data=y), col="red")
