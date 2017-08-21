@@ -97,28 +97,68 @@ hg <- read.csv("~/InvasivePets/huc_gps_table.csv",
                stringsAsFactors = FALSE)
 hg <- as.data.table(hg)
 
-#fix this to count species not individuals
+#plot number of unique species by population
 hg_count <- setDT(hg)[ , .(
   count=.N) ,
   by = .(HUC12_1,common)]
 View(hg_count)
 count_pop <- merge(hp,hg_count,by="HUC12_1", all=TRUE)
-count_pop[is.na(count_pop)]<-0
 View(count_pop)
-
-
-#linear regression of total species counts per huc
-y<-as.data.table(count_pop)[,sum(count), by=.(Population)]
-colnames(y)<-c("Population", "count")
-head(y)
-reg<-lm(Population~count, data=y)
-
+#library(dplyr)
+#elimainte count column
+count_pop[,count:=NULL]
+head(count_pop)
+DT<-data.table(count_pop)
+DT<-DT[,.(species=length(unique(common[!is.na(common)]))), by=Population]
+DT<-as.data.table(DT)
+head(DT)
+reg<-lm(Population~species, data=DT)
 summary(reg)
 
-plot(y$Population, y$count,
+
+plot(DT$Population, DT$species,
      xlab="population", 
      ylab="count", 
      pch=19
      )
 
-abline(lm(count~Population, data=y), col="red")
+
+
+#abline(lm(count~Population, data=y), col="red")
+
+#population by group/taxa
+hg_group <- setDT(hg)[ , .(
+  count=.N) ,
+  by = .(HUC12_1,group_)]
+View(hg_group)
+group_pop <- merge(hp,hg_group,by="HUC12_1", all=TRUE)
+View(group_pop)
+group_pop[,count:=NULL]
+head(group_pop)
+GP<-data.table(group_pop)
+GP<-GP[,.(taxa=length(unique(group_[!is.na(group_)]))), by=Population]
+GP<-as.data.table(GP)
+head(GP)
+reg<-lm(Population~taxa, data=GP)
+summary(reg)
+
+
+huc_sp_grp<-data.frame(huc_gps_table[,c("HUC12_1","group_","common")])
+huc_grp_sp <- merge(hp,huc_sp_grp,by="HUC12_1", all=TRUE)
+View(huc_grp_sp)
+hucgrpsp<-with(huc_grp_sp, tapply(common, list(Population,group_),
+                              FUN=function(x)length(unique(x))))
+View(hucgrpsp)
+hucgrpsp<-subset(hucgrpsp, 
+                 select=-c(Coelenterates, Crustaceans))
+head(hucgrpsp)
+hucgrpsp<-hucgrpsp[,-4]
+hucgrpsp[is.na(hucgrpsp)]<-0
+hucgrpsp<-data.frame(hucgrpsp)
+View(hucgrpsp)
+str(hucgrpsp)
+hucgrpsp<-setNames(cbind(rownames(hucgrpsp), hucgrpsp, row.names=NULL),
+         c("HUC", "Fishes", "Mollusks", "Plants"))
+
+#THis doesn't work
+test<-lm(HUC~Fishes+Mollusks+Plants, data=hucgrpsp)
