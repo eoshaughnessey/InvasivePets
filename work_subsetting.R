@@ -1,5 +1,7 @@
 library(sf)
 library(rgdal)
+library(dplyr)
+library(tidy)
 #list.files("../handouts/data")
 
 #bring in shapefile of US counties
@@ -141,6 +143,7 @@ GP<-as.data.table(GP)
 head(GP)
 reg<-lm(Population~taxa, data=GP)
 summary(reg)
+plot(GP$Population, GP$taxa)
 
 huc_sp_grp<-data.frame(huc_gps_table[,c("HUC12_1","group_","common")])
 huc_grp_sp <- merge(hp,huc_sp_grp,by="HUC12_1", all=TRUE)
@@ -181,4 +184,73 @@ text(pfit, use.n=TRUE, all=TRUE, cex=.8)
 hist(hucgrpsp$HUC, 
      col="blue")
 
+#let's explore density, you'll need DPLYR,
+#density by number of taxa
+HUC_area <- read_csv("E:/postdoc/R/InvasivePets/HUC_area.csv")
+ha<-merge(HUC_area,hp, by="HUC12_1", all=TRUE)
+head(ha)
+ha[,"Population"]/ha[,c("AREAACRES", "AREASQKM")]
+ha<-tbl_df(ha)
+ha<-ha%>%
+  mutate(ACREPOP=Population/AREAACRES, KMPOP=Population/AREASQKM)
+head(ha)  
+str(ha)
+ha[,1]=as.character(as.numeric(ha[,1]))
+ha<-data.table(ha)
+haha<-merge(ha, group_pop, by="HUC12_1", all=TRUE )
+head(haha)
+haha[,AREASQKM:=NULL]
+haha[,AREAACRES:=NULL]
+haha[,Population.y:=NULL]
+HA_SP<-haha[,.(taxa=length(unique(group_[!is.na(group_)]))), by=KMPOP]
+View(HA_SP)
+ha_reg_taxa<-lm(KMPOP~taxa, data=HA_SP)
+summary(ha_reg_taxa)
+plot(HA_SP$KMPOP, HA_SP$taxa)
+
+#MULTIPLE REGRESSION WITH TAXA and density
+hagp<-merge(ha, huc_sp_grp, by="HUC12_1", all=TRUE)
+head(hagp)
+hagrpsp<-with(hagp, tapply(common, list(KMPOP,group_),
+                                  FUN=function(x)length(unique(x))))
+head(hagrpsp)
+hagrpsp<-subset(hagrpsp, 
+                 select=-c(Coelenterates, Crustaceans))
+hagrpsp<-hagrpsp[,-4]
+hagrpsp[is.na(hagrpsp)]<-0
+hagrpsp<-as.data.frame(hagrpsp)
+hagrpsp<-setNames(cbind(rownames(hagrpsp), hagrpsp, row.names=NULL),
+                   c("KMDensity", "Fishes", "Mollusks", "Plants"))
+hagrpsp[,1] <- as.numeric(as.character(hagrpsp[,1]))  
+test<-lm(KMDensity~Fishes+Mollusks+Plants, data=hagrpsp)
+summary(test)
+
+#density by number of species
+ha_count<-merge(ha, count_pop, by="HUC12_1")
+head(ha_count)
+DT<-data.table(ha_count)
+DT<-DT[,.(species=length(unique(common[!is.na(common)]))), by=KMPOP]
+DT<-as.data.table(DT)
+head(DT)
+reg<-lm(KMPOP~species, data=DT)
+summary(reg)
+
+
+plot(DT$KMPOP, DT$species,
+     xlab="density", 
+     ylab="number of species", 
+     pch=19)
+abline(lm(species~KMPOP, data=DT), col="red")
+lines(DT$KMPOP, predict(reg), col="blue")
+ggplot(DT, aes(KMPOP, species))+geom_point()+geom_smooth(method="lm")
+
+#regression tree with density
+test3<-rpart(KMDensity~Fishes+Mollusks+Plants, data=hagrpsp, method="anova")
+summary(test3)
+printcp(test3)
+plotcp(test3)
+plot(test3, uniform=TRUE,
+     main="classification tree for population size x number of species present within each taxon")
+text(test3, use.n=TRUE, all=TRUE, cex=.8)
+post(test3, file="e:/postdoc/R/cart.invasive.ps")
 
