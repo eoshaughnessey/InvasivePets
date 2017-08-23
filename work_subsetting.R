@@ -87,13 +87,13 @@ View(huc_population)
 write.csv(huc_population, file="huc_populations.csv")
 
 #merge huc population sizes with other data
-huc_pop <- read.csv("~/InvasivePets/huc_populations.csv", 
+huc_pop <- read.csv("E:/postdoc/R/InvasivePets/huc_populations.csv", 
                     stringsAsFactors = FALSE)
 hp <- as.data.table(huc_pop)
 hp[,Population := as.numeric(Population)] 
 
 
-hg <- read.csv("~/InvasivePets/huc_gps_table.csv",
+hg <- read.csv("E:/postdoc/R/InvasivePets/huc_gps_table.csv",
                stringsAsFactors = FALSE)
 hg <- as.data.table(hg)
 
@@ -118,7 +118,7 @@ summary(reg)
 
 plot(DT$Population, DT$species,
      xlab="population", 
-     ylab="count", 
+     ylab="number of species", 
      pch=19
      )
 
@@ -142,23 +142,43 @@ head(GP)
 reg<-lm(Population~taxa, data=GP)
 summary(reg)
 
-
 huc_sp_grp<-data.frame(huc_gps_table[,c("HUC12_1","group_","common")])
 huc_grp_sp <- merge(hp,huc_sp_grp,by="HUC12_1", all=TRUE)
 View(huc_grp_sp)
 hucgrpsp<-with(huc_grp_sp, tapply(common, list(Population,group_),
                               FUN=function(x)length(unique(x))))
+head(hucgrpsp)
 View(hucgrpsp)
 hucgrpsp<-subset(hucgrpsp, 
                  select=-c(Coelenterates, Crustaceans))
 head(hucgrpsp)
 hucgrpsp<-hucgrpsp[,-4]
 hucgrpsp[is.na(hucgrpsp)]<-0
-hucgrpsp<-data.frame(hucgrpsp)
+hucgrpsp<-as.data.frame(hucgrpsp)
 View(hucgrpsp)
 str(hucgrpsp)
 hucgrpsp<-setNames(cbind(rownames(hucgrpsp), hucgrpsp, row.names=NULL),
          c("HUC", "Fishes", "Mollusks", "Plants"))
+hucgrpsp[,1] <- as.numeric(as.character(hucgrpsp[,1]))  
 
-#THis doesn't work
+#multiple regression
 test<-lm(HUC~Fishes+Mollusks+Plants, data=hucgrpsp)
+summary(test)
+
+#regression tree
+test2<-rpart(HUC~Fishes+Mollusks+Plants, data=hucgrpsp, method="class")
+summary(test2)
+printcp(test2)
+plotcp(test2)
+plot(test2, uniform=TRUE,
+     main="classification tree for population size x number of species present within each taxon")
+text(test2, use.n=TRUE, all=TRUE, cex=.8)
+post(test2, file="e:/postdoc/R/cart.invasive.ps")
+pfit<-prune(test2, cp=0.0100000)
+plot(pfit, uniform=TRUE)
+text(pfit, use.n=TRUE, all=TRUE, cex=.8)
+
+hist(hucgrpsp$HUC, 
+     col="blue")
+
+

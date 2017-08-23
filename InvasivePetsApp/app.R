@@ -16,24 +16,16 @@ library(dplyr)
 library(datasets)
 library(ggplot2)
 
+getwd()
 
-dt <- read.csv("~/InvasivePets/MasterDataSheet_temperature.csv",
+dt <- read.csv("E:/postdoc/R/InvasivePets/MasterDataSheet_temperature.csv",
                stringsAsFactors = FALSE)
+
 
 tab <- as.data.table(dt)
 tab[,Max_Temp := as.numeric(Max_Temp)]
 tab[,Min_Temp := as.numeric(Min_Temp)]
 tab[,YearEndCDa:=as.numeric(YearEndCDa)]
-
-
-huc_pop <- read.csv("~/InvasivePets/huc_populations.csv",
-                    stringsAsFactors = FALSE)
-hp <- as.data.table(huc_pop)
-hp[,Population := as.numeric(Population)] 
-
-
-hg <- read.csv("~/InvasivePets/huc_gps_table.csv")
-hg <- as.data.table(hg)
 
 
 #grp1 <- as.data.frame(hp[,
@@ -58,14 +50,34 @@ hg <- as.data.table(hg)
 #                           )]
 #                      )
 
-hg_count <- setDT(hg)[ , .(
-  count=.N) ,
-  by = .(common,HUC12_1)]
-count_pop <-merge(hp,hg_count,by="HUC12_1")
-count_pop[156,4] <- "Piraoatinga"
-count_pop$common<-gsub('\\s+', '_', count_pop$common)
+#hg_count <- setDT(hg)[ , .(
+#  count=.N) ,
+#  by = .(common,HUC12_1)]
+#count_pop <-merge(hp,hg_count,by="HUC12_1")
+#count_pop[156,4] <- "Piraoatinga"
+#count_pop$common<-gsub('\\s+', '_', count_pop$common)
 #cn<-count_pop[, unique(common)]
 #cn <- parse(text=gsub(' ', '_', cn))
+
+#bring in population size per huc and other important files
+huc_pop <- read.csv("E:/postdoc/R/InvasivePets/huc_populations.csv", 
+                    stringsAsFactors = FALSE)
+hp <- as.data.table(huc_pop)
+hp[,Population := as.numeric(Population)] 
+
+hg <- read.csv("E:/postdoc/R/InvasivePets/huc_gps_table.csv",
+               stringsAsFactors = FALSE)
+hg <- as.data.table(hg)
+
+
+hg_count <- setDT(hg)[ , .(
+  count=.N) ,
+  by = .(HUC12_1,common)]
+count_pop <- merge(hp,hg_count,by="HUC12_1", all=TRUE)
+count_pop[,count:=NULL]
+DT<-data.table(count_pop)
+DT<-DT[,.(species=length(unique(common[!is.na(common)]))), by=Population]
+DT<-as.data.table(DT)
 
 
 # Define UI for application that draws a histogram
@@ -80,9 +92,9 @@ ui <- fluidPage(
          conditionalPanel(
             condition="input.conditionedPanels==1",
         selectInput( "variable", "First variable:",
-                  list( "Population" = "count_pop$Population")),
+                  list( "Population" = "DT$Population")),
         selectInput("variable2", "Second variable:",
-                   list ("Number of Individuals Caught" = "count_pop$count"))
+                   list ("Number of species" = "DT$species"))
       )
       ,
       conditionalPanel(
@@ -119,7 +131,7 @@ ui <- fluidPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
     text1 <- reactive({
-    paste('Population size versus All Occurences')
+    paste('Population size versus number of species')
   })
     text2<-reactive({
       paste('Population size versus Specie Occurence(s)')
@@ -138,7 +150,7 @@ server <- function(input, output) {
   # Generate a plot of the requested variables
   output$plot <- renderPlot({
     p <- ggplot(count_pop, aes_string(x=input$variable, y=input$variable2, 
-                                      col="common")) + 
+                                      col="species")) + 
       geom_point()
     print(p)
    })
